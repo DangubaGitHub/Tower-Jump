@@ -6,11 +6,13 @@ TagManager:
   tags:
   - Spike
   - Platform
+  - Wall
+  - Platform Destroyer
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Platform
   - Water
   - UI
   - 
