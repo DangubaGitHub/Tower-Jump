@@ -5,7 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed;
-    [SerializeField] float jump;
+
+    [Header("Jumping")]
+    [SerializeField] float jumpForce;
+    [SerializeField] float groundCheckRadius;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] LayerMask groundLayer;
+    [SerializeField] bool isGrounded;
 
     float moveX;
 
@@ -24,11 +30,22 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        moveX = Input.GetAxis("Horizontal");
+        moveX = Input.GetAxisRaw("Horizontal");
+
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            Jump();
+        }
     }
 
     private void FixedUpdate()
     {
         rb2d.velocity = new Vector2(moveX * speed * Time.deltaTime, rb2d.velocity.y);
+    }
+
+    void Jump()
+    {
+        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
     }
 }
