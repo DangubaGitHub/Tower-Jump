@@ -8,6 +8,7 @@ TagManager:
   - Platform
   - Wall
   - Platform Destroyer
+  - Orange
   layers:
   - Default
   - TransparentFX
