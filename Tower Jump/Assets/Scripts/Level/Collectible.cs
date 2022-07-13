@@ -23,5 +23,10 @@ public class Collectible : MonoBehaviour
             Destroy(gameObject);
             GameManager.instance.collectibleCount++;
         }
+
+        if(other.CompareTag("Platform Destroyer"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
