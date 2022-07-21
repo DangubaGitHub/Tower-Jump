@@ -9,7 +9,7 @@ public class FirstPlatform : MonoBehaviour
 
     void Awake()
     {
-        platformRb2d = GetComponent<Rigidbody2D>();
+        platformRb2d = GetComponent<Rigidbody2D>();  
     }
 
     void Start()
