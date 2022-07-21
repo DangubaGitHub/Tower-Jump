@@ -11,14 +11,31 @@ public class UIController : MonoBehaviour
     [SerializeField] GameObject menuPanel;
     [SerializeField] GameObject resetButton;
 
+    bool menuIsOn;
+
     void Start()
     {
+        Time.timeScale = 0;
         menuPanel.SetActive(true);
         resetButton.SetActive(false);
     }
 
     void Update()
     {
+        if(menuIsOn)
+        {
+            Time.timeScale = 0;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!menuIsOn)
+            {
+                menuIsOn = true;
+                menuPanel.SetActive(true);
+            }
+        }
+
         UpdateFloorCount();
         UpdatePickupCount();
     }
@@ -36,6 +53,8 @@ public class UIController : MonoBehaviour
     public void StartGame()
     {
         menuPanel.SetActive(false);
+        Time.timeScale = 1;
+        menuIsOn = false;
     }
 
     public void QuitGame()
