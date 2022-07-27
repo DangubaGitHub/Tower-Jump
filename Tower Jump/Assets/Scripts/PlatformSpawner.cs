@@ -7,7 +7,7 @@ public class PlatformSpawner : MonoBehaviour
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] GameObject prefab;
     
-    [SerializeField] float timeBetweenSpawn;
+    //[SerializeField] float timeBetweenSpawn;
     float nextSpawnTime;
 
     void Start()
@@ -21,7 +21,7 @@ public class PlatformSpawner : MonoBehaviour
         {
             SpawnPlatform();
 
-            nextSpawnTime = Time.time + timeBetweenSpawn;
+            nextSpawnTime = Time.time + DifficultyManager.instance.platformSpawnRate;
         }
     }
 

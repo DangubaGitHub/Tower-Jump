@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int levelCount;
-    public int collectibleCount; 
+    public int collectibleCount;
+    public int difficultyCountDown;
 
     public static GameManager instance;
 

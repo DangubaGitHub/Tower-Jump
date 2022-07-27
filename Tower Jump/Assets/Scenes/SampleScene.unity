@@ -448,7 +448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6f539a115a6f14a84a5a4481f8dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scroleSpeed: -0.18
   number: 1.6
 --- !u!1 &332051795
 GameObject:
@@ -2343,7 +2342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -72}
+  m_AnchoredPosition: {x: 63, y: -59}
   m_SizeDelta: {x: 115.3477, y: 101.4732}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1661911165
@@ -2420,7 +2419,6 @@ MonoBehaviour:
   - {fileID: 1053268578}
   - {fileID: 581410188}
   prefab: {fileID: 2860349439528771516, guid: 3d609505c9e767941982079d07f604fb, type: 3}
-  speed: 0.2
   timeBetweenSpawn: 2
 --- !u!4 &1713977204
 Transform:
@@ -2540,7 +2538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f29628044ec54b9307e4722951feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scroleSpeed: -0.15
   number: 1.91
 --- !u!1 &1788477860
 GameObject:
@@ -3092,6 +3089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1994185645}
   - component: {fileID: 1994185644}
+  - component: {fileID: 1994185646}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -3113,6 +3111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCount: 0
   collectibleCount: 0
+  difficultyCountDown: 0
 --- !u!4 &1994185645
 Transform:
   m_ObjectHideFlags: 0
@@ -3128,6 +3127,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1994185646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994185643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ae73bb8f324d74ea700cc2a3b941be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformSpeed: 0
+  pickupSpeed: 0
+  fgSpeed: 0
+  bgSpeed: 0
 --- !u!1 &2011508248
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,7 +3192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3284,10 +3299,10 @@ RectTransform:
   m_Father: {fileID: 2011508252}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.420288, y: 31.030396}
-  m_SizeDelta: {x: -434.4335, y: -243.6293}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -8.078888, y: 31.030396}
+  m_SizeDelta: {x: 253.59747, y: 292.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2127601034
 MonoBehaviour:

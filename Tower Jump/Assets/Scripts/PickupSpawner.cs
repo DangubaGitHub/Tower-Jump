@@ -6,9 +6,9 @@ public class PickupSpawner : MonoBehaviour
 {
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] GameObject prefab;
-    [SerializeField] float speed;
+    //[SerializeField] float speed;
 
-    [SerializeField] float timeBetweenSpawn;
+    //[SerializeField] float timeBetweenSpawn;
     float nextSpawnTime;
 
     void Start()
@@ -22,7 +22,7 @@ public class PickupSpawner : MonoBehaviour
         {
             SpawnPlatform();
 
-            nextSpawnTime = Time.time + timeBetweenSpawn;
+            nextSpawnTime = Time.time + DifficultyManager.instance.pickupSpawnRate;
         }
     }
 
@@ -32,6 +32,6 @@ public class PickupSpawner : MonoBehaviour
 
         GameObject platform = Instantiate(prefab, spawnPoints[randSpawnPoint].position, transform.rotation);
         Rigidbody2D platformRb2d = platform.GetComponent<Rigidbody2D>();
-        platformRb2d.AddForce(Vector2.down * speed, ForceMode2D.Impulse);
+        platformRb2d.AddForce(Vector2.down * DifficultyManager.instance.pickupSpeed, ForceMode2D.Impulse);
     }
 }

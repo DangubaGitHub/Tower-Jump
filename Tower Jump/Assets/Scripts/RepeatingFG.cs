@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RepeatingFG : MonoBehaviour
 {
-    [SerializeField] float scroleSpeed = -2f;
+    //[SerializeField] float scroleSpeed;
     [SerializeField] float number;
     Vector2 startPosition;
 
@@ -15,7 +15,7 @@ public class RepeatingFG : MonoBehaviour
 
     void Update()
     {
-        float newPos = Mathf.Repeat(Time.time * scroleSpeed, number);
+        float newPos = Mathf.Repeat(Time.time * DifficultyManager.instance.fgSpeed, number);
         transform.position = startPosition + Vector2.up * newPos;
     }
 }

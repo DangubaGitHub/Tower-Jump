@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    [SerializeField] float fallSpeed;
+    float speed;
     Rigidbody2D platformRb2d;
 
     void Awake()
@@ -14,7 +14,13 @@ public class Platform : MonoBehaviour
 
     void Start()
     {
-        platformRb2d.velocity = new Vector2(0, -fallSpeed);
+        
+    }
+
+    private void Update()
+    {
+        UpdateFallSpeed();
+        platformRb2d.velocity = new Vector2(0, -speed);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -29,6 +35,12 @@ public class Platform : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
 
             GameManager.instance.levelCount++;
+            GameManager.instance.difficultyCountDown--;
         }
+    }
+
+    void UpdateFallSpeed()
+    {
+        speed = DifficultyManager.instance.platformSpeed;
     }
 }
